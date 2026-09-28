@@ -30,17 +30,7 @@ export default function PublicChatPage() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, isLoading]);
 
-  useEffect(() => {
-    // Load greeting on first visit
-    agentApi.getConversationHistory('public-session', 'public', 'guest@platform.local')
-      .then(hist => {
-        if (hist?.messages && hist.messages.length > 0) {
-          setMessages(hist.messages);
-          setHasStarted(true);
-        }
-      })
-      .catch(() => {});
-  }, []);
+  // No conversation history loading - chat starts fresh every launch
 
   const handleSend = async (text) => {
     const userText = text || inputText;
