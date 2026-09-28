@@ -1,5 +1,5 @@
 """
-Project Knowledge Base & Domain Truth Repository for the Project Opportunity Platform.
+Project Knowledge Base & Domain Truth Repository for the Connecta Platform.
 Contains confirmed project requirements, public FAQ definitions, internal architectural specs,
 and academic project guidance.
 """
@@ -7,7 +7,7 @@ and academic project guidance.
 PROJECT_METADATA = {
     "interim_agent_name": "Connecta",
     "project_type": "Digital networking, talent-discovery, internship, and recruitment platform (Graduation Project)",
-    "confirmed_name_status": "Undecided - Group refers to it as 'The Platform' or 'Project Opportunity Platform'",
+    "confirmed_name_status": "Connecta",
     "primary_stakeholders": ["Students", "Athletes", "Scouts", "Enterprises", "Partnered Clinics", "Administrators"],
     "secondary_stakeholders": ["Universities", "Sports Academies", "Sports Clubs", "Coaches", "Project Supervisors", "Development Team"],
     "public_account_types": ["Student", "Athlete", "Scout", "Enterprise"],

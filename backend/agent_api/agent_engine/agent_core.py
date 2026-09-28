@@ -18,7 +18,7 @@ class ProjectOpportunityAgentEngine:
     def __init__(self, config=None, user_context=None):
         self.config = config or {}
         self.user_context = user_context or {}
-        self.agent_name = self.config.get('name', 'Project Opportunity Assistant')
+        self.agent_name = self.config.get('name', 'Connecta Assistant')
         self.active_environment = self.config.get('active_environment', 'internal')
         self.active_tools = self.config.get('active_tools', [
             'opportunity_matcher', 'verification_explainer', 'academic_report_generator',
@@ -284,9 +284,9 @@ class ProjectOpportunityAgentEngine:
 
         # 1. Public Platform Chatbot Responses
         if environment == "public":
-            if any(w in prompt_lower for w in ["what is", "about", "platform", "help"]):
+            if any(w in prompt_lower for w in ["what is", "about", "Connecta", "help"]):
                 return (
-                    f"### 🌐 Welcome to the Project Opportunity Platform\n\n"
+                    f"### 🌐 Welcome to the Connecta Assistant\n\n"
                     f"{PUBLIC_FAQ_KNOWLEDGE['what_is_platform']}\n\n"
                     f"#### 👥 Public Account Types:\n"
                     f"{PUBLIC_FAQ_KNOWLEDGE['account_types']}\n\n"
@@ -311,7 +311,7 @@ class ProjectOpportunityAgentEngine:
                 )
             else:
                 return (
-                    f"### 🤝 Project Opportunity Assistant\n\n"
+                    f"### 🤝 Connecta Assistant\n\n"
                     f"I can guide you through using the platform, creating student or athlete profiles, "
                     f"browsing internships, scouting sports talent, and understanding our clinic verification process.\n\n"
                     f"How can I assist you with your opportunities today?"

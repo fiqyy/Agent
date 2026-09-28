@@ -111,7 +111,7 @@ export default function PublicChatPage() {
   };
 
   const quickPrompts = [
-    "What is the Project Opportunity Platform?",
+    "What is the Connecta Assistant?",
     "How do I apply for an internship?",
     "Can I have both Student and Athlete profiles?",
     "What does the blue verification badge mean?",
@@ -133,7 +133,7 @@ export default function PublicChatPage() {
           </div>
           <div>
             <h1 className="public-brand-title">
-              Project Opportunity Assistant
+              Connecta Assitant
             </h1>
             <p className="public-brand-subtitle">
               AI-powered guidance for Students, Athletes, Enterprises & Scouts
@@ -156,7 +156,7 @@ export default function PublicChatPage() {
             </div>
             <h2 className="public-welcome-title">
               Welcome to the<br />
-              <span className="public-gradient-text">Project Opportunity Platform</span>
+              <span className="public-gradient-text">Connecta Assistant</span>
             </h2>
             <p className="public-welcome-desc">
               Ask me anything about internship applications, athlete scouting,
@@ -209,7 +209,7 @@ export default function PublicChatPage() {
                     {/* Agent label */}
                     {!isUser && (
                       <div className="public-msg-label">
-                        <span style={{ color: 'var(--primary-cyan)', fontWeight: 600 }}>Project Opportunity Assistant</span>
+                        <span style={{ color: 'var(--primary-cyan)', fontWeight: 600 }}>Connecta Assistant</span>
                         {hasViolations && (
                           <span className="badge badge-rose" style={{ fontSize: '0.65rem', marginLeft: '8px' }}>
                             <ShieldAlert size={10} /> Policy Filtered
@@ -329,7 +329,7 @@ export default function PublicChatPage() {
           </button>
         </form>
         <p className="public-footer-note">
-          <Zap size={11} /> Powered by Project Opportunity AI Engine • Responses are for guidance only
+          <Zap size={11} /> Powered by Connecta Assistant • Responses are for guidance only
         </p>
       </div>
     </div>
