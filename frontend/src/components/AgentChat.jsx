@@ -79,7 +79,7 @@ export default function AgentChat({
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `Project-Opportunity-Assistant-Log-${new Date().toISOString().slice(0, 10)}.md`;
+    a.download = `Connecta-Assistant-Log-${new Date().toISOString().slice(0, 10)}.md`;
     a.click();
   };
 
@@ -177,7 +177,7 @@ export default function AgentChat({
           </div>
           <div>
             <h3 style={{ fontSize: '1.05rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '8px' }}>
-              {agentConfig?.name || 'Project Opportunity Assistant'}
+              {agentConfig?.name || 'Connecta Assistant'}
               <span className={`badge ${activeEnvironment === 'public' ? 'badge-cyan' : (activeEnvironment === 'internal' ? 'badge-emerald' : 'badge-purple')}`}>
                 {activeEnvironment.toUpperCase()} MODE
               </span>
@@ -391,7 +391,7 @@ export default function AgentChat({
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '16px 20px', background: 'rgba(18, 26, 48, 0.7)', borderRadius: 'var(--radius-md)', width: 'fit-content' }}>
             <div className="live-pulse" style={{ background: 'var(--primary-cyan)' }} />
             <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-              Project Opportunity Assistant is evaluating policy guardrails and project context...
+              Connecta Assistant is evaluating policy guardrails and project context...
             </span>
           </div>
         )}
@@ -439,7 +439,7 @@ export default function AgentChat({
         <input
           type="text"
           className="input-control"
-          placeholder={`Ask the Project Opportunity Assistant (${activeEnvironment.toUpperCase()} mode)...`}
+          placeholder={`Ask the Connecta Assistant (${activeEnvironment.toUpperCase()} mode)...`}
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
           disabled={isLoading}
