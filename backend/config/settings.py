@@ -27,32 +27,6 @@ SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-change-me-in-prod")
 # SECURITY: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
-# ALLOWED_HOSTS must always be a list/tuple
-import os
-
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-]
-
-extra_hosts = os.getenv("ALLOWED_HOSTS", "")
-if extra_hosts:
-    ALLOWED_HOSTS.extend(h.strip() for h in extra_hosts.split(",") if h.strip())
-
-# Ensure all *.vercel.app are allowed
-ALLOWED_HOSTS.append(".vercel.app")
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-]
-
-extra_hosts = os.getenv("ALLOWED_HOSTS", "")
-if extra_hosts:
-    ALLOWED_HOSTS.extend(h.strip() for h in extra_hosts.split(",") if h.strip())
-
-# Ensure all *.vercel.app are allowed
-ALLOWED_HOSTS.append(".vercel.app")
-
 # Application definition
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -80,19 +54,37 @@ MIDDLEWARE = [
 ]
 
 # CORS: restrict to configured origins (Vercel + Render in production)
-CORS_ALLOWED_ORIGINS_ENV = os.getenv(
-    "CORS_ALLOWED_ORIGINS",
-    "http://localhost:5173,http://127.0.0.1:5173",
-)
+# ALLOWED_HOSTS
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    ".vercel.app",  # allows all *.vercel.app (production + previews)
+]
+
+extra_hosts = os.getenv("ALLOWED_HOSTS", "")
+if extra_hosts:
+    ALLOWED_HOSTS.extend(h.strip() for h in extra_hosts.split(",") if h.strip())
+
+
+# CORS: allow configured origins + all *.vercel.app previews
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "https://agent-git-main-fiqyys-projects.vercel.app",
-    "https://agent-6nt0ph866-fiqyys-projects.vercel.app",
 ]
 
-# Optionally allow all *.vercel.app previews in dev:
-# CORS_ALLOW_ALL_ORIGINS = True  # (only if you really want this)
+cors_env = os.getenv("CORS_ALLOWED_ORIGINS", "")
+if cors_env:
+    CORS_ALLOWED_ORIGINS.extend(
+        origin.strip() for origin in cors_env.split(",") if origin.strip()
+    )
+
+# Allow all *.vercel.app preview domains (optional but convenient)
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://[a-zA-Z0-9.-]+\.vercel\.app$",
+]
+
 CORS_ALLOW_CREDENTIALS = True
 
 REST_FRAMEWORK = {
