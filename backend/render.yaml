@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: grad-agent-backend
+    env: python
+    region: frankfurt  # or choose the closest to you
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn config.wsgi:application
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.0
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: false
+      - key: ALLOWED_HOSTS
+        value: ""  # we’ll set this in Render dashboard
+      - key: DATABASE_URL
+        fromDatabase:
+          name: grad-agent-db
+          property: connectionString
+      - key: CORS_ALLOWED_ORIGINS
+        value: ""  # we’ll set this in Render dashboard
+
+databases:
+  - name: grad-agent-db
+    plan: free
+    databaseName: gradagent
