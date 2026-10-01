@@ -7,7 +7,57 @@ Built with **React** (Vite + Modern Vanilla CSS Glassmorphism Design System) and
 ---
 
 ## 🌟 Core Architecture & Multi-Environment System
+Tree View:
+backend/
+  manage.py
+  db.sqlite3
+  seed_data.py
+  config/
+    __init__.py
+    asgi.py
+    settings.py
+    urls.py
+    wsgi.py
+  agent_api/
+    __init__.py
+    admin.py
+    apps.py
+    models.py
+    serializers.py
+    urls.py
+    views.py
+    tests.py
+    migrations/
+      ...
+    agent_engine/
+      __init__.py
+      agent_core.py
+      knowledge_base.py
+      safety_guard.py
+      tools/
+        academic_report_generator.py
+        academic_tutor.py
+        business_feasibility_analyzer.py
+        dual_load_balancer.py
+        nutrition_fuel_advisor.py
+        opportunity_matcher.py
+        recovery_engine.py
+        schedule_optimizer.py
+        technical_architect.py
+        verification_explainer.py
+        workflow_automator.py
 
+frontend/
+  package.json
+  vite.config.js
+  index.html
+  src/
+    main.jsx
+    App.jsx
+    ...
+  public/
+    ...
+    
 The agent operates with the same underlying project truth across **3 distinct operating environments**:
 
 ```text
