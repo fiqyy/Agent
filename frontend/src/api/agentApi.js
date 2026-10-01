@@ -2,7 +2,7 @@
  * API Service for communicating with Project Opportunity Platform Django Backend.
  */
 
-const API_BASE = 'https://agent-git-main-fiqyys-projects.vercel.app/api';
+const API_BASE = 'https://backend-mauve-five-nylrr4x3qf.vercel.app/';
 export const agentApi = {
   // Agent Config
   async getConfig() {

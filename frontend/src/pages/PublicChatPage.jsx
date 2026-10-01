@@ -133,10 +133,10 @@ export default function PublicChatPage() {
           </div>
           <div>
             <h1 className="public-brand-title">
-              Connecta Assitant
+              Connecta Assitant - 3shan yesa3ed Fiqy
             </h1>
             <p className="public-brand-subtitle">
-              AI-powered guidance for Students, Athletes, Enterprises & Scouts
+              FIQY AI-powered guidance for Students, Athletes, Enterprises & Scouts
             </p>
           </div>
         </div>
@@ -329,7 +329,7 @@ export default function PublicChatPage() {
           </button>
         </form>
         <p className="public-footer-note">
-          <Zap size={11} /> Powered by Connecta Assistant • Responses are for guidance only
+          <Zap size={11} /> Powered by Fiqy • Responses are for guidance only
         </p>
       </div>
     </div>
