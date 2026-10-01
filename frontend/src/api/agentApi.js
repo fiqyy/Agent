@@ -2,8 +2,7 @@
  * API Service for communicating with Project Opportunity Platform Django Backend.
  */
 
-const API_BASE = 'http://127.0.0.1:8000/api';
-
+const API_BASE = 'https://agent-git-main-fiqyys-projects.vercel.app/api';
 export const agentApi = {
   // Agent Config
   async getConfig() {
@@ -41,9 +40,9 @@ export const agentApi = {
     const res = await fetch(`${API_BASE}/agent/chat/`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ 
-        message, 
-        environment, 
+      body: JSON.stringify({
+        message,
+        environment,
         user_email: userEmail,
         session_id: sessionId,
         access_password: accessPassword
